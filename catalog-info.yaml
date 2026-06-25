@@ -9,7 +9,7 @@ metadata:
     - homelab
     - infrastructure
   annotations:
-    github.com/project-slug: cassioliveiram/gitops.metrics-server
+    github.com/project-slug: cmoreira-dev/gitops.metrics-server
     backstage.io/kubernetes-id: homelab-talos
 spec:
   type: service
