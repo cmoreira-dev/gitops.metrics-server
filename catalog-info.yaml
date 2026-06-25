@@ -2,24 +2,17 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: Repo Template for GitOps Deployments
-  description: '<Description of the application>'
+  name: gitops-metrics-server
+  description: 'Kubernetes Metrics Server — enables HPA and kubectl top'
   tags:
     - kubernetes
     - homelab
     - infrastructure
   annotations:
-    github.com/project-slug: cmoreira-dev/gitops.template
-    backstage.io/kubernetes-id: homelab-bootstrap-k3s
-    argocd/app-name: '<ApplicationSet Name>'
-  links:
-    - url: '<Placeholder for the application URL>'
-      title: '<Placeholder for the application title>'
-      icon: dashboard
+    github.com/project-slug: cassioliveiram/gitops.metrics-server
+    backstage.io/kubernetes-id: homelab-talos
 spec:
-  type: website
-  lifecycle: lab
-#  owner: platform-team
-#  system: homelab
-#  dependsOn:
-#    - component:homelab-bootstrap-k3s
+  type: service
+  lifecycle: production
+  owner: platform-team
+  system: homelab

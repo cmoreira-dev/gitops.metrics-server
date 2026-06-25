@@ -1,0 +1,20 @@
+metrics-server:
+  replicas: 1
+
+  # Override defaultArgs to add Talos-specific flags:
+  #   --kubelet-insecure-tls: kubelet uses self-signed certs on self-hosted clusters
+  #   --kubelet-preferred-address-types=InternalIP: Talos nodes may not have resolvable hostnames
+  defaultArgs:
+    - --cert-dir=/tmp
+    - --kubelet-preferred-address-types=InternalIP
+    - --kubelet-use-node-status-port
+    - --metric-resolution=15s
+    - --kubelet-insecure-tls
+
+  resources:
+    requests:
+      cpu: 50m
+      memory: 100Mi
+    limits:
+      cpu: 200m
+      memory: 200Mi
